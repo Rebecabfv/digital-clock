@@ -18,18 +18,15 @@ const showTime = () => {
   min = min < 10 ? "0" + min : min;
   sec = sec < 10 ? "0" + sec : sec;
 
-  let currentTime = `${hour}:${min}:${sec}:${am_pm}`;
+  let currentTime = `${hour}:${min}:${sec}${am_pm}`;
   document.getElementById("clock").innerHTML = currentTime;
 };
 
 const showDate = () => {
   let date = new Date();
-  let day = date.getDay();
-  let month = date.getMonth();
+  let day = String(date.getDate()).padStart(2, "0");
+  let month = String(date.getMonth() + 1).padStart(2, "0");
   let year = date.getFullYear();
-
-  day = day < 10 ? "0" + day : day;
-  month = month < 10 ? "0" + month : month;
 
   let currentDate = `${day} / ${month} / ${year}`;
   document.getElementById("date").innerHTML = currentDate;
