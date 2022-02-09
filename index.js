@@ -1,4 +1,3 @@
-setInterval(showTime, 1000);
 const showTime = () => {
   let time = new Date();
   let hour = time.getHours();
@@ -23,7 +22,6 @@ const showTime = () => {
   document.getElementById("clock").innerHTML = currentTime;
 };
 
-setInterval(showDate, 1);
 const showDate = () => {
   let date = new Date();
   let day = date.getDay();
@@ -37,5 +35,7 @@ const showDate = () => {
   document.getElementById("date").innerHTML = currentDate;
 };
 
-showTime();
+setInterval(showTime, 1);
+setInterval(showDate, 1);
 showDate();
+showTime();
